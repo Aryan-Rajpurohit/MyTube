@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { data, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import VideoCard from '../Components/VideoCard'
 
 const VideoPage = () => {
@@ -28,13 +28,12 @@ const VideoPage = () => {
   if (!videoData) return <p style={{ color: "white" }}>Loading...</p>
 
   return (
-    <div style={{ display: "flex", gap: "20px", padding: "20px", color: "white" }}>
+    <div className='flex flex-col lg:flex-row gap-5 p-3 sm:p-5 text-white'>
 
-      <div style={{ flex: 2 }}>
+      <div className='flex-1'>
 
         <iframe
-          width="800"
-          height="450"
+          className='w-full aspect-video rounded-xl'
           src={`https://www.youtube.com/embed/${id}`}
           title="video player"
           frameBorder="0"
@@ -50,7 +49,7 @@ const VideoPage = () => {
         </p>
       </div>
 
-      <div style={{ flex: 1 }}>
+      <div className='w-full lg:w-[350px]'>
         {relatedVideos.length>0 && relatedVideos.map((video) => (
           <VideoCard key={video.id.videoId} video={video}/>
         ))}

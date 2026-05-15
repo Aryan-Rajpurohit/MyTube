@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex items-center justify-between px-5 py-3 bg-[#202020] text-white'>
+    <div className='flex items-center justify-between gap-3 px-3 py-3 bg-[#202020] text-white flex-wrap'>
       <h2 className='text-2xl font-bold cursor-pointer'>MyTube</h2>
 
       <input type='text'
@@ -22,7 +22,7 @@ const Navbar = () => {
         onKeyDown={(e) => {
           if (e.key === "Enter") handleSearch()
         }}
-        className='flex-1 ml-10 px-4 py-2 rounded-full bg-[#121212] border border-gray-600 outline-none'
+        className='flex-1 min-w-0 px-4 py-2 rounded-full bg-[#121212] border border-gray-600 outline-none'
       />
 
       <button
